@@ -140,9 +140,12 @@ model.save('chatbot_model.h5')
 #Chatbot Test
 while True:
     message = input("Enter 'stop' To Break Execution: ")
+    
+    if message == "stop":
+        break
+        
     intents = pred_class(message, words, classes)
     result = get_response(intents, data)
     print(result)
 
-    if message == "stop":
-        break
+    
